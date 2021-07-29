@@ -1,11 +1,39 @@
+{% extends "base.html" %}
+{% load static %}
 
-<h1>MS4 Retail Blog Posts</h1>
+{% block page_header %}
+    <div class="container header-container">
+        <div class="row">
+            <div class="col"></div>
+        </div>
+    </div>
+{% endblock %}
 
-<ul>
-{% for post in object_list %}
-    <li>{{ post.title }} - {{ post.user }}<br/>
-    {{ post.body_text }}</li>
-{% endfor %}
-</ul>
+{% block content %}
+    <div class="overlay"></div>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col text-center mt-3">
+                <h2 class="logo-font">MS4 BLOG</h2>
+                <hr class="w-50 mb-1">
+            </div>
+        </div>
 
+        <br/>
+        <div class="container blog-container">
+            <div class="row">
+                <div class="col-12 col-lg-6">
+                    <ul>
+                        {% for post in object_list %}
+                            <li><h2>{{ post.title }}</h2> - <h4>{{ post.user }}</h4><br/>
+                            <p>{{ post.body_text }}</p></li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
 
+            
+       
+{% endblock %}

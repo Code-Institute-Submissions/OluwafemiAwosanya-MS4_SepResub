@@ -265,6 +265,13 @@ input[name='q']::placeholder {
     border-radius: 0;
 }
 
+/* Blog Page*/
+
+.blog-container{
+    color: #000 !important;
+    max-height: 416px; 
+    overflow-y: auto;
+}
 
 /* fixed top navbar only on medium and up */
 @media (min-width: 992px) {
