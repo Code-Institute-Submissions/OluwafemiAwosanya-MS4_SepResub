@@ -1,102 +1,250 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
 
-Welcome OluwafemiAwosanya,
+## Table of Contents
+* [Purpose](#Purpose)
+* [User Experience Design (UX)](#User-Experience-Design)
+  * [User stories](#User-Stories)
+    * [First Time Visitor Goals](#First-Time-Visitor-Goals)
+    * [Returning Visitor Goals](#Returning-Visitor-Goals)
+    * [Frequent User Goals](#Frequent-User-Goals)
+  * [Structure](#Structure)
+  * [Design](#Design)
+    * [Colour Scheme](#Colour-Scheme)
+    * [Typography](#Typography)
+    * [Imagery](#Imagery)
+    * [Wireframes](#Wireframes)
+    * [Differences to Design](Differences-to-Design)
+* [Limitations](#Limitations)
+- [Features](#Features)
+    * [Existing Features](#Existing-Features)
+    * [Future Features](#Features-Left-to-Implement)
+* [Technologies](#Technologies)
+* [Testing](#Testing)
+    * [Test Strategy](#Test-Strategy)
+      * [Summary](#Summary)
+      * [High Level Test Cases](#High-Level-Test-Cases)
+      * [Out of Scope](#Out-of-Scope)
+    * [Test Results](#Test-Results)
+    * [Testing Issues](#Issues-and-Resolutions-to-issues-found-during-testing)
+* [Deployment](#Deployment)
+    * [Project Creation](#Project-Creation)
+    * [Project Deployment](#Using-Heroku)
+    * [Locally](Run-Locally)
+* [Credits](#Credits)
+  * [Content](#Content)
+  * [Media](#Media)
+  * [Acknowledgements](#Acknowledgements)
+  * [Comments](#Comments)
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. The last update to this file was: **July 2, 2021**
+# Milestone Project 4
+## Purpose
+This E-Commerce Platform was created for the sole purpose of completing the fourth Milestone Project for the Code Institute's Full Stack Developer course. 
+It was built using the knowledge gained from the HTML, CSS, Javascript, Python+Django and Full Stack Frameworks with Django modules. A full list of technologies used can be found in the technologies section of this document.
 
-## Gitpod Reminders
+The live website can be found [here](https://).
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+## MS4 Retail Responsive Website
 
-`python3 -m http.server`
+![Website Mock Up](media/ms4_mockup.PNG)
 
-A blue button should appear to click: _Make Public_,
+The MS4 Retail E-Commerce Platform was built...
 
-Another blue button should appear to click: _Open Browser_.
+*** 
+## User Experience Design
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+### User stories
+#### First Time Visitor Goals
+* As a First Time user, I want to easily understand the essence of the site and learn more about the offerings.
+* As a First Time user, I want to be able to easily navigate throughout the site to find products.
+* As a First Time user, I want to view the website and content clearly on my mobile device.
+* As a First Time user, I want to be able to buy products offered on the website.
+#### Returning Visitor Goals
+* As a Returning user, I want to be able to see my order history.
+* As a Returning user, I want to be able to make further purchases.
+* As a Returning user, I want to be able to see latest offerings on the website.
+#### Frequent Visitor Goals
+* As a Frequent user, I want to check to see if there are new collections of products on offer.
+* As a Frequent user, I want to check to see if there are new blogposts to learn more about the business offerings.
+### Structure
+All Pages will contain a Navigation menu at the top of the Webpage that directs them to a new Page to easily allow users to Navigate the site easily.
+The Nav Menu will be collapsable on a Mobile device to make use of space on smaller devices.
+The purpose of this is to fulfill user story:
+> As a First Time user, I want to be able to easily navigate throughout the site to find products.
 
-A blue button should appear to click: _Make Public_,
+The Home Page will a cover hero image of a shopper, this explains the website is a shopping website.
+The purpose of this is to fulfill user story:
+> As a First Time user, I want to easily understand the essence of the site and learn more about the offerings.
 
-Another blue button should appear to click: _Open Browser_.
+Custom CSS and/or Bootstrap will be used to make the Website responsive by the use of media queries and/or the Boostrap Grid system.
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+All pages will be responsive and the layouts will change dependant on screen size. This is to ensure content flow is appealing,
+images are displayed properly and that the content is not shrunk side by side, so small that it is unreadable.
+The purpose of this is to fulfill user story:
+> As a First Time user, I want to view the website and content clearly on my mobile device.
 
-To log into the Heroku toolbelt CLI:
+### Design
+#### Colour Scheme
+The two main colours used are White  and Black to keep the layout simple and allow the products images add more colours
+#### Typography
 
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
+#### Imagery
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
+#### Wireframes
+Home Page<br>
+![Home Page Wireframe](media/wireframes/Home.png)<br>
+Main Page<br>
+![About Page Wireframe](media/wireframes/Main_Page.png)<br>
+Checkout Page<br>
+![Events Page Wireframe](media/wireframes/Checkout_Page.png)<br>
 
-------
+For full side PDF's of the wireframes, please click the links below
+* [Home Page Wireframe](media/wireframes/Home.pdf)
 
-## Release History
+* [Main Page Wireframe](media/wireframes/Main_Page.pdf)
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
+* [Checkout Page Wireframe](media/wireframes/Checkout_Page.pdf)
 
-**July 2 2021:** Remove extensions that are not available in Open VSX.
 
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
 
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
+#### Differences to Design
 
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
+### Limitations
 
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
+***
+## Features
+ 
+### Existing Features
+- 
+- 
+- 
+- 
+- 
 
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
+### Features Left to Implement
+- 
+- 
+***
+## Technologies
 
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
+* HTML
+	* This project uses HTML as the main language used to complete the structure of the Website.
+* CSS
+	* This project uses custom written CSS to style the Website.
+* Javascript
+    * This project uses javascript to enhance the dynamism and responsiveness of the website
+* Python+Django
+    * This project is built on Python-Django Frameworks Fullstack
+* Postgresql
+    * This project uses postgresql as database
+* [Bootstrap](https://getbootstrap.com/)
+	* The Bootstrap framework is used throughout this website for layouts and styling. The car
+	* This has also been used to import JavaScript/Query used for the pop up Event booking modal
+* [Font Awesome](https://fontawesome.com/)
+	* Font awesome Icons are used for the Social media links contained in the Footer section of the website.
+* [Google Fonts](https://fonts.google.com/)
+	* Google fonts are used throughout the project to import the *Libre Baskerville* and *Cabin* fonts.
+* [Gitpod](https://gitpod.io/)
+	* Gitpod is the Integrated Development Environment used to develop the Website.
+* [GitHub](https://github.com/)
+	* GithHub is the hosting site used to store the source code for the Website and [Git Pages](https://pages.github.com/) is used for the deployment of the live site.
+* [Git](https://git-scm.com/)
+	* Git is used as version control software to commit and push code to the GitHub repository where the source code is stored.
+* [TinyJPG](https://tinyjpg.com/)
+	* TinyJPG is used to reduce the file sizes of images before being deployed to reduce storage and bandwith.
+* [Google Chrome Developer Tools](https://developers.google.com/web/tools/chrome-devtools)
+	* Google chromes built in developer tools are used to inspect page elements and help debug issues with the site layout and test different CSS styles.
+* [balsamiq Wireframes](https://balsamiq.com/wireframes/)
+	* This was used to create wireframes for 'The Skeleton Plane' stage of UX design.
+* [Techsini](http://techsini.com/multi-mockup/index.php)
+    * tecnisih.com Multi Device Website Mockup Generator was used to create the Mock up image in this README
 
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
+***
+## Testing
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
+### Test Strategy 
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
+#### Summary 
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
+Testing is required on MilestoneProject-4 – MS4 Retail E-Commerce Website.
 
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
 
-------
 
-## FAQ about the uptime script
 
-**Why have you added this script?**
+The live Project can be found [here](https://).</br>
+#### High Level Test Cases 
+![Test Cases](assets/images/readme-images/high-level-tests.jpg)
+ 
 
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
+### Test Results
+All Pages were run through the [W3C HTML Validator](https://validator.w3.org/) and showed no errors.<br>
+CSS Stylesheet was run through the [W3C CSS Validator](https://jigsaw.w3.org/css-validator/validator) and showed no errors.<br>
+All Python codes were run through the []() and satisifies PEP8 compliance.
+Website was tested by running locally and tested on the deployed version. No differences found.
 
-**How will this affect me?**
+* 
+* 
+* 
+* 
 
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
+* 
+* 
 
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
+* 
+* 
+* 
 
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
+### Issues and Resolutions to issues found during testing
+* 
+* 
+* 
+* 
+* 
+* 
+* 
 
-**So….?**
+## Deployment
 
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
+### Project Creation
+The project was started by navigating to the [template](https://github.com/Code-Institute-Org/gitpod-full-template) and clicking 'Use this template'. Under Repository name I input MS4 and checked the Include all branches checkbox. I then navigated to the new [repository](https://github.com/OluwafemiAwosanya/MS4) and clicked the Gitpod extension button on my Github to open the Gitpod editor.
 
-**Can I opt out?**
+The following commands were used throughout the project:
 
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
+* git add filename - This command was used to add files to the staging area before commiting.
+* git commit -m "commit message explaining the updates" - This command was used to to commit changes to the local repository.
+* git push - This command is used to push all commited changes to the GitHub repository. 
 
-```
-pkill uptime.sh
-rm .vscode/uptime.sh
-```
+### Project Deployment
+The Project was deployed for hosting on [Heroku](https://heroku.com) with the following steps;
 
-**Anything more?**
+1. 
+2. 
+3. 
+4. 
+5. 
+6. 
 
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
+Static files, mainly media files are hosted on [Amazon Web Services](https://aws.amazon.com)
 
----
+### Run Locally
+1. Navigate to the GitHub [Repository:](https://github.com/OluwafemiAwosanya/MS4)
+2. Click the Code drop down menu.
+3. Either Download the ZIP file, unpackage locally and open with IDE (This route ends here) OR Copy Git   URL from the HTTPS dialogue box.
+4. Open your developement editor of choice and open a terminal window in a directory of your choice.
+5. Use the 'git clone' command in terminal followed by the copied git URL.
+6. A clone of the project will be created locally on your machine.
 
-Happy coding!
+***
+## Credits
+### Code
+
+### Content
+The content of this software was created by Oluwafemi Awosanya with guidance from the Code Institute video lectures, Youtube videos and My Mentor Spencer Barriball
+
+### Media
+The Homepage background image was taken from [Unsplash Photos for everyone](https://unsplash.com/)
+All the products images and properties are taken from [kaggle.com](https://www.kaggle.com/vikashrajluhaniwal/fashion-images)
+
+### Acknowledgements
+
+I'd like to thank my mentor Spencer Barriball for his guidance throughout my project.<br>
+Thanks to YouTube pages like Traversy Media, Techworld with Nana and Codemy, their resources has been of immense help.<br>
+I'd like to give a special mention to all Code Institute Tutors and the Code Institute Slack Community for a great learning experience in the last 12 months.<br>
