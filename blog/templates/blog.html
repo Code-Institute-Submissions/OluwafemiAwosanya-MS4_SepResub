@@ -1,0 +1,11 @@
+
+<h1>MS4 Retail Blog Posts</h1>
+
+<ul>
+{% for post in object_list %}
+    <li>{{ post.title }} - {{ post.user }}<br/>
+    {{ post.body_text }}</li>
+{% endfor %}
+</ul>
+
+
