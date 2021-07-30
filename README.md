@@ -40,13 +40,13 @@
 This E-Commerce Platform was created for the sole purpose of completing the fourth Milestone Project for the Code Institute's Full Stack Developer course. 
 It was built using the knowledge gained from the HTML, CSS, Javascript, Python+Django and Full Stack Frameworks with Django modules. A full list of technologies used can be found in the technologies section of this document.
 
-The live website can be found [here](https://).
+The live website can be found [here](https://ms4-retail.herokuapp.com/).
 
 ## MS4 Retail Responsive Website
 
 ![Website Mock Up](media/ms4_mockup.PNG)
 
-The MS4 Retail E-Commerce Platform was built...
+The MS4 Retail E-Commerce Platform was built as to bring ease and comfort to customer online shopping experience, as they can buy anytime anywhere and have their orders delivered.
 
 *** 
 ## User Experience Design
@@ -85,9 +85,9 @@ The purpose of this is to fulfill user story:
 #### Colour Scheme
 The two main colours used are White  and Black to keep the layout simple and allow the products images add more colours
 #### Typography
-
+Lato font is used throughout the project.
 #### Imagery
-
+Product photographs are taken from Kaggle.com. Online data set resource.
 #### Wireframes
 Home Page<br>
 ![Home Page Wireframe](media/wireframes/Home.png)<br>
@@ -104,24 +104,19 @@ For full side PDF's of the wireframes, please click the links below
 * [Checkout Page Wireframe](media/wireframes/Checkout_Page.pdf)
 
 
-
-#### Differences to Design
-
-### Limitations
-
 ***
 ## Features
  
 ### Existing Features
-- 
-- 
-- 
-- 
-- 
+- User login feature
+- User Order management
+- User order checkout
+- User Payment enabled by Stripe
+- User authentication
 
 ### Features Left to Implement
-- 
-- 
+- Add Blog content from front-end
+- Allow site users to engage via comment sections in blog post.
 ***
 ## Technologies
 
@@ -135,6 +130,8 @@ For full side PDF's of the wireframes, please click the links below
     * This project is built on Python-Django Frameworks Fullstack
 * Postgresql
     * This project uses postgresql as database
+* Stripe
+    * Payment Processing Platform as order payment processor
 * [Bootstrap](https://getbootstrap.com/)
 	* The Bootstrap framework is used throughout this website for layouts and styling. The car
 	* This has also been used to import JavaScript/Query used for the pop up Event booking modal
@@ -164,40 +161,29 @@ For full side PDF's of the wireframes, please click the links below
 
 #### Summary 
 
-Testing is required on MilestoneProject-4 – MS4 Retail E-Commerce Website.
+Testing is required on MilestoneProject-4 – MS4 Retail E-Commerce Website to ensure all features are working correctly to serve the end users well as intended.
+
+All Features were tested on different screen sizes and devices and all to testers satisfactions.
 
 
-
-
-The live Project can be found [here](https://).</br>
+The live Project can be found [here](https://ms4-retail.herokuapp.com/).</br>
 #### High Level Test Cases 
-![Test Cases](assets/images/readme-images/high-level-tests.jpg)
+![Test Cases](media/TestP.PNG)
  
 
 ### Test Results
 All Pages were run through the [W3C HTML Validator](https://validator.w3.org/) and showed no errors.<br>
 CSS Stylesheet was run through the [W3C CSS Validator](https://jigsaw.w3.org/css-validator/validator) and showed no errors.<br>
-All Python codes were run through the []() and satisifies PEP8 compliance.
+All Python codes were run through the [Pep8online checker](http://pep8online.com/) and satisifies PEP8 compliance.
 Website was tested by running locally and tested on the deployed version. No differences found.
 
-* 
-* 
-* 
-* 
-
-* 
-* 
-
-* 
-* 
-* 
 
 ### Issues and Resolutions to issues found during testing
+* Database migration to Postgresql failed due to update SQAlchemy in the CI Github template I used.
+* Igor_Ci on Slack helped out with the code 'unset PGHOSTADDR'
 * 
-* 
-* 
-* 
-* 
+* Project failed to run locally after I deleted some media files from database
+* I cleared cache and restarted workspace.
 * 
 * 
 
@@ -215,12 +201,13 @@ The following commands were used throughout the project:
 ### Project Deployment
 The Project was deployed for hosting on [Heroku](https://heroku.com) with the following steps;
 
-1. 
-2. 
-3. 
-4. 
-5. 
-6. 
+1. I created Heroku App for the project 
+2. Connected Git Remote
+3. Added required packages to requirements.txt
+4. Freeze requirements.txt
+5. Added Procfile with Capital 'P'
+6. Deployed code to Heroku
+7. Enable Automatic Deploy in Heroku
 
 Static files, mainly media files are hosted on [Amazon Web Services](https://aws.amazon.com)
 
