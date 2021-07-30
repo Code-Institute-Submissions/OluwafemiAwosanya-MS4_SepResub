@@ -130,9 +130,7 @@ DATABASES = {
   }
 }
 
-# DATABASES = {
-#     'default': dj_database_url.parse('postgres://hyvyifzrsxdbkm:54bc5df2f3d3049e24b6dbeddf26d8d6a3cc300c7ed10ee613154a6938252788@ec2-54-74-77-126.eu-west-1.compute.amazonaws.com:5432/dpmhapa7jrqe7')
-# }
+
 
 
 # Password validation
