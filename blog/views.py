@@ -19,7 +19,7 @@ def blog(request):
 
 def blog_detail(request, blog_post_id):
     blog_post = get_object_or_404(BlogPost, pk=blog_post_id)
-    comments = blog_post.comments.all()
+    # comments = blog_post.comments.all()
     comments = Comments.objects.all(blogpost=blog_post_id)
     new_comment = None
 
