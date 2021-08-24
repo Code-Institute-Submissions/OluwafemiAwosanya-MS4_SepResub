@@ -10,6 +10,9 @@ class BlogPost(models.Model):
     created_at = models.DateTimeField(auto_now_add=True, blank=True)
     updated_at = models.DateTimeField(auto_now=True, blank=True)
 
+    class Meta:
+        ordering = ['-created_at']
+
     def __str__(self):
         return self.title + '|' + str(self.user)
     
@@ -19,6 +22,9 @@ class Comments(models.Model):
     post = models.ForeignKey(BlogPost, on_delete=models.CASCADE)
     created_at = models.DateTimeField(auto_now_add=True, blank=True)
     comment = models.TextField(default=None, blank=False, null=False)
+
+    class Meta:
+        ordering = ['-created_at']
 
     def __str__(self):
         return self.comment + '|' + str(self.user)

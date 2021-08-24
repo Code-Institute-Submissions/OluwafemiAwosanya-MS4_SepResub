@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_header %}
+    <div class="container header-container">
+        <div class="row">
+            <div class="col"></div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block content %}
+<div class="overlay"></div>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col text-center mt-3">
+                <h2 class="logo-font">MS4 Retail Blog-Posts</h2>
+                <hr class="w-50 mb-1">
+            </div>
+        </div>
+    </div class="container mt-5">
+        <div class="row">
+            <div class="col-lg-8">
+                {% for blog_post in blog_posts %}
+                <div class="col-12 col-md-6 col-lg-4 col-xl-3 g-4">
+                    <!-- Bootstrap Card -->
+                    <div class="card blog-card h-100">
+                            <a href="{% url 'blog_detail' blog_post.id %}">
+                                <h1>{{ blog_post.title }}</h1>
+                            </a>
+                        <div class="card-body">
+                            <p class="blog-info sub-heading">{{ blog_post.title }}</p>
+                            <p class="blog-info p-text">{{ blog_post.body_text|slice:":200" }}</p>
+                            <p class="blog-info text-muted">{{ blog_post.user }} | {{ blog_post.created_at}}</p>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    <div >
+
+
+
+    </div>
+
+{% endblock %}
