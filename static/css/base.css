@@ -267,11 +267,11 @@ input[name='q']::placeholder {
 
 /* Blog Page*/
 
-.blog-container{
+/* .blog-container{
     color: #000 !important;
     max-height: 416px; 
     overflow-y: auto;
-}
+} */
 
 /* fixed top navbar only on medium and up */
 @media (min-width: 992px) {

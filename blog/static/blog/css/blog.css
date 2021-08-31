@@ -1,0 +1,28 @@
+.blog-body-text > p {
+    font-size: 1.6rem;
+}
+
+.blog-detail-wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+
+.blog-card {
+    margin-top: 4rem;
+}
+
+.comment-header {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+}
+
+.comment-body p {
+    font-size: 1.4rem;
+}
+
+.blog-container{
+    color: #000 !important;
+    max-height: 416px; 
+    overflow-y: auto;
+}
