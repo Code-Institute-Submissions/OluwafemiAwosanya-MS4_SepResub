@@ -267,11 +267,10 @@ input[name='q']::placeholder {
 
 /* Blog Page*/
 
-/* .blog-container{
-    color: #000 !important;
-    max-height: 416px; 
-    overflow-y: auto;
-} */
+.blog-detail-index-wrapper {
+    display: flex;
+    justify-content: space-between;
+}
 
 /* fixed top navbar only on medium and up */
 @media (min-width: 992px) {
