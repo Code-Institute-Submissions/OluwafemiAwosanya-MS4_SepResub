@@ -1,13 +1,12 @@
-  
 from django import forms
 from products.widgets import CustomClearableFileInput
-from .models import Comments, BlogPost
+from .models import BlogComment, BlogPost
 
 
 class BlogCommentForm(forms.ModelForm):
 
     class Meta:
-        model = Comments
+        model = BlogComment
 
         fields = (
             'comment',
@@ -26,11 +25,11 @@ class BlogForm(forms.ModelForm):
 
     class Meta:
         model = BlogPost
-        fields = {
+        fields = (
             'title',
             'body_text',
             'image',
-        }
+        )
 
     field_order = ['title', 'body_text', 'image']
 
@@ -41,7 +40,7 @@ class BlogForm(forms.ModelForm):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
 
-        for field_name, field in self.fields.items():
+        for field in self.fields.values():
             field.widget.attrs['class'] = 'admin-form'
         self.fields['title'].widget.attrs['placeholder'] = 'Blog Title'
         self.fields['body_text'].widget.attrs['placeholder'] = 'Blog Content'

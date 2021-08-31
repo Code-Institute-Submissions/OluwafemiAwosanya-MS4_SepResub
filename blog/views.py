@@ -1,11 +1,16 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect, reverse
 from django.views.generic import ListView, DetailView
-from .models import BlogPost, Comments
-from .forms import BlogCommentForm
+from django.contrib.auth.decorators import login_required
+from .models import BlogPost, BlogComment
+from .forms import BlogCommentForm, BlogForm
 
 
-# Create your views here.
-def blog(request):
+# All blog posts view
+def all_blog_posts(request):
+    """
+    A view to show the blog page
+    """
+
     blog_posts = BlogPost.objects.all()
 
     template = 'blog/blog.html'
@@ -17,15 +22,19 @@ def blog(request):
     return render(request, template, context)
 
 
+# Blog detail view
 def blog_detail(request, blog_post_id):
+    """
+    A view to show individual blog post, comments
+    and to allow logged in users to leave a comment.
+    """
     blog_post = get_object_or_404(BlogPost, pk=blog_post_id)
-    # comments = blog_post.comments.all()
-    comments = Comments.objects.all(post=blog_post_id)
+    comments = blog_post.comments.all()
     new_comment = None
 
     if request.method == 'POST':
         comment_form = BlogCommentForm(request.POST)
-        if comment_form.is_valid():
+        if comment_form.is_valid() and request.user.is_authenticated:
             new_comment = comment_form.save(commit=False)
             new_comment.blog_post = blog_post
             new_comment.user = request.user
@@ -48,3 +57,108 @@ def blog_detail(request, blog_post_id):
     }
 
     return render(request, template, context)
+
+
+# Blog Admin:
+# Add blog
+@login_required
+def add_blog_post(request):
+    """
+    Allow an admin user to add a blog post
+    """
+    if request.user.is_superuser:
+
+        if request.method == 'POST':
+            form = BlogForm(request.POST, request.FILES)
+            if form.is_valid():
+                blog_post = form.save(commit=False)
+                blog_post.user = request.user
+                blog_post.save()
+                messages.info(request, 'Blog added successfully!')
+                return redirect(reverse('blog_detail', args=[blog_post.id]))
+            else:
+                messages.error(request, 'Please check the form for errors. \
+                    Blog failed to add.')
+        else:
+            form = BlogForm()
+    else:
+        messages.error(request, 'Sorry, you do not have permission for that.')
+        return redirect(reverse('home'))
+
+    template = 'blog/add_blog.html'
+
+    context = {
+        'form': form,
+    }
+
+    return render(request, template, context)
+
+
+# Edit Blog Post
+@login_required
+def edit_blog(request, blog_post_id):
+    """
+    Allow an admin user to edit a product to the store
+    """
+    if request.user.is_superuser:
+
+        blog_post = get_object_or_404(BlogPost, pk=blog_post_id)
+
+        if request.method == 'POST':
+            form = BlogForm(request.POST, request.FILES, instance=blog_post)
+            if form.is_valid():
+                form.save()
+                messages.info(request, 'Blog post updated successfully!')
+                return redirect(reverse('blog_detail', args=[blog_post.id]))
+            else:
+                messages.error(request, 'Please check the form for errors. \
+                    Blog post failed to update.')
+        else:
+            form = BlogForm(instance=blog_post)
+            messages.info(request, f'Editing {blog_post.title}')
+    else:
+        messages.error(request, 'Sorry, you do not have permission for that.')
+        return redirect(reverse('home'))
+
+    template = 'blog/edit_blog.html'
+
+    context = {
+        'form': form,
+        'blog_post': blog_post,
+    }
+
+    return render(request, template, context)
+
+
+# Delete Blog Post
+@login_required
+def delete_blog_post(request, blog_post_id):
+    """
+    Allow an admin user to delete a blog post
+    """
+    if request.user.is_superuser:
+        blog_post = get_object_or_404(BlogPost, pk=blog_post_id)
+        blog_post.delete()
+        messages.info(request, 'Blog post deleted!')
+    else:
+        messages.error(request, 'Sorry, you do not have permission for that.')
+        return redirect(reverse('home'))
+
+    return redirect(reverse('blog'))
+
+
+# Delete Comment
+@login_required
+def delete_comment(request, comment_id):
+    """
+    Allow an admin user to delete a comment
+    """
+    if request.user.is_superuser:
+        comment = BlogComment.objects.get(pk=comment_id)
+        comment.delete()
+        messages.info(request, 'Comment deleted!')
+    else:
+        messages.error(request, 'Sorry, you do not have permission for that.')
+        return redirect(reverse('home'))
+
+    return redirect('blog')
