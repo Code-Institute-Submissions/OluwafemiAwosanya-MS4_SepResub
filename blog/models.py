@@ -42,3 +42,5 @@ class BlogComment(models.Model):
 
     def __str__(self):
         return f"Comment on {self.blog_post.title} by {self.user}"
+
+
