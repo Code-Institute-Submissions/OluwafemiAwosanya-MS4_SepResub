@@ -187,6 +187,7 @@ Website was tested by running locally and tested on the deployed version. No dif
 * 
 * Programming error: column does not exist in db - Got this error after I updated my blog model and tried to migrate to postgresql. Worked fine in dev but error in production.
 * Reached out to Tutor support after several interventions fro stackoverflow and slack proved null and Jo and Kevin from Tutor support helped out , I had to reset the database as it was obviously corrupt.
+* 
 * Error code = H13 on Heroku - Got this error trying to add blog posts in production
 * Restarted All Dynos in Heroku and that fixed it.
 
