@@ -38,7 +38,7 @@ def blog_detail(request, blog_post_id):
         if comment_form.is_valid() and request.user.is_authenticated:
             new_comment = comment_form.save(commit=False)
             new_comment.blog_post = blog_post
-            new_comment.user = request.user
+            new_comment.user = request.user.userprofile
             new_comment.save()
             messages.success(request, 'Comment added successfully!')
             return redirect(reverse('blog_detail', args=[blog_post.id]))
@@ -73,7 +73,7 @@ def add_blog_post(request):
             form = BlogForm(request.POST, request.FILES)
             if form.is_valid():
                 blog_post = form.save(commit=False)
-                blog_post.user = request.user
+                blog_post.user = request.user.userprofile
                 blog_post.save()
                 messages.info(request, 'Blog added successfully!')
                 return redirect(reverse('blog_detail', args=[blog_post.id]))

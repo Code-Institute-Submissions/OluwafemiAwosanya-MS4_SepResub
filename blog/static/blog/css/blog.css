@@ -26,3 +26,7 @@
     max-height: 416px; 
     overflow-y: auto;
 }
+
+.row.comments-container{
+    display: contents;
+}
